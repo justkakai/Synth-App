@@ -10,37 +10,46 @@ function App() {
 
   const [pingPongVal, setPingPongVal] = useState("0.5");
   const [pingPongProgress, setPingPongProgress] = useState("50%");
-
-  function pingPongSlider(e) {
-    const maxVal = e.target.max;
-    const val = (e.target.value / maxVal) * 100 + "%";
-    setPingPongVal(e.target.value);
-    setPingPongProgress(val);
-  }
+  const [feedbackVal, setFeedbackVal] = useState("0.5");
+  const [feedbackProgress, setFeedbackProgress] = useState("50%");
+  const [bitCrusherVal, setBitCrusherVal] = useState("8");
+  const [bitCrusherProgress, setBitCrusherProgress] = useState("100%");
 
   function playNote(note) {
+
     const pingPongDelay = new Tone.PingPongDelay("4n", parseFloat(pingPongVal)).toDestination();
-    const autoWah = new Tone.AutoWah(100, 2, -300).toDestination();
-    const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
-    const synth = new Tone.Synth().toDestination().connect(pingPongDelay).connect(autoWah).connect(feedbackDelay);
-    autoWah.Q.value = 1;
+
+    /*  const autoWah = new Tone.AutoWah(100, 2, -300).toDestination();
+        autoWah.Q.value = 1;  */
+
+    const feedbackDelay = new Tone.FeedbackDelay(0.125, parseFloat(feedbackVal)).toDestination();
+
+    const bitCrusher = new Tone.BitCrusher(parseInt(bitCrusherVal)).toDestination();
+
+    // const oscillator = new Tone.Oscillator().connect(feedbackDelay).start();
+
+    const synth = new Tone.Synth().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
+
     const now = Tone.now();
     synth.triggerAttackRelease(note, "4n", now);
   }
+
 
   function stopSound() {
     Tone.Transport.stop();
   }
 
+
   window.addEventListener("keypress", function (e) {
     playNote(KEY_TO_NOTE[e.key]);
   })
 
-  const providerValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress, pingPongSlider, playNote, stopSound };
+  const providerValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress, feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress, bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress, playNote, stopSound };
 
   return (
     <AppContext.Provider value={providerValues}>
       <main className="App">
+        <h1>VirtuoSynth</h1>
         <Sliders />
         <Keyboard />
       </main>

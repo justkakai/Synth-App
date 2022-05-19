@@ -1,11 +1,23 @@
-.ping-pong-slider {
-  width: 30em;
+.sliders-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  background-color: rgba(61, 61, 61, 0.1);
+  padding: 2rem 0;
+  width: 80%;
+}
+
+.sliders-general {
+  width: 40em;
   position: relative;
   display: flex;
   user-select: none;
 }
 
-.ping-pong-slider .slider {
+.sliders-general .slider {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -16,7 +28,7 @@
   box-shadow: 3px 3px 6px #000, inset 1px 1px 1px #909090;
 }
 
-.ping-pong-slider .slider::-webkit-slider-thumb {
+.sliders-general .slider::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
   width: 1.7em;
@@ -26,7 +38,7 @@
   position: relative;
 }
 
-.ping-pong-slider .slider-thumb {
+.sliders-general .slider-thumb {
   position: absolute;
   width: 1.7em;
   height: 1.7em;
@@ -38,7 +50,7 @@
   box-shadow: inset 0px 1px 2px #909090;
 }
 
-.ping-pong-slider .slider-thumb::before {
+.sliders-general .slider-thumb::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -51,11 +63,11 @@
   transition: 0.3s;
 }
 
-.ping-pong-slider:hover .slider-thumb::before {
+.sliders-general:hover .slider-thumb::before {
   background: #15a8d4;
 }
 
-.ping-pong-slider .tool-tip {
+.sliders-general .tool-tip {
   position: absolute;
   width: 3.8em;
   height: 2em;
@@ -67,10 +79,10 @@
   line-height: 35px;
   color: #fff;
   border-radius: 3px;
-  box-shadow: 0px 3px 10px #1f1f1f, inset 0px 1px 2px #909090;
+  box-shadow: 0px 3px 2px #313131, inset 0px 1px 2px #909090;
 }
 
-.ping-pong-slider .tool-tip::before {
+.sliders-general .tool-tip::before {
   content: '';
   position: absolute;
   width: 0;
@@ -83,13 +95,24 @@
   transform: translate(-50%);
 }
 
-.ping-pong-slider .progress {
+.sliders-general .progress {
   height: 0.4em;
   border-radius: 3px;
-  background: linear-gradient(90deg, #e048a6, #ffffff 100%);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
   pointer-events: none;
+}
+
+.ping-pong-slider .progress {
+  background: linear-gradient(90deg, #e048a6, #ffffff 100%);
+}
+
+.feedback-slider .progress {
+  background: linear-gradient(90deg, #ff5f54, #ffffff 100%);
+}
+
+.bit-crusher-slider .progress {
+  background: linear-gradient(90deg, #1815e9, #ffffff 100%);
 }
