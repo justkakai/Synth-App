@@ -1,38 +1,155 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 5rem;
+  background-color: black;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+  /* border: 4px solid firebrick; */
+}
+
+.piano-key {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 4rem;
+  height: 18rem;
+  background-color: #03fd03;
+  outline: none;
+  border: none;
+}
+
+.piano-key:active {
+  background-color: rgba(3, 253, 3, 0.8);
+}
+
+.black-key {
+  position: relative;
+  height: 12rem;
+  background-color: black;
+  margin: 0 -36px;
+  z-index: 2;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.black-key:active {
+  background-color: rgb(43, 43, 43)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keys-row {
+  display: flex;
+  gap: 0.5rem;
 }
+
+/* slider stuff */
+
+.range-slider {
+  /* border: 2px solid rgb(34, 173, 178); */
+  width: 30em;
+  position: relative;
+  display: flex;
+  user-select: none;
+}
+
+.range-slider .slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.4em;
+  outline: none;
+  border-radius: 3px;
+  background: #8a8a8a;
+  box-shadow: 3px 3px 6px #000, inset 1px 1px 1px #909090;
+}
+
+.range-slider .slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.7em;
+  height: 1.7em;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+.range-slider .slider-thumb {
+  position: absolute;
+  width: 1.7em;
+  height: 1.7em;
+  background: #03fd03;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: inset 0px 1px 2px #909090;
+}
+
+.range-slider .slider-thumb::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.7em;
+  height: 0.7em;
+  background: #333;
+  border-radius: inherit;
+  transition: 0.3s;
+}
+
+.range-slider:hover .slider-thumb::before {
+  background: #ffffff;
+}
+
+.range-slider .tool-tip {
+  position: absolute;
+  width: 2.8em;
+  height: 2em;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #090909;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 3px 10px #1f1f1f, inset 0px 1px 2px #909090;
+}
+
+.range-slider .tool-tip::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #090909;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.range-slider .progress {
+  height: 0.4em;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #335bf4, #2ae9c9 100%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  pointer-events: none;
+}
+
+
