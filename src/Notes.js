@@ -26,6 +26,8 @@ const notes = [
     { note: "Bb", noteOctave: "Bb4", keysClasses: "black-key piano-key" },
     { note: "B", noteOctave: "B4", keysClasses: "white-key piano-key" },
     { note: "C", noteOctave: "C5", keysClasses: "white-key piano-key" },
+    { note: "Db", noteOctave: "Db5", keysClasses: "black-key piano-key" },
+    { note: "D", noteOctave: "D5", keysClasses: "white-key piano-key" },
 ]
 
 const KEY_TO_NOTE = {
@@ -41,7 +43,9 @@ const KEY_TO_NOTE = {
     h: "A4",
     u: "Bb4",
     j: "B4",
-    k: "C5"
+    k: "C5",
+    o: "Db5",
+    l: "D5"
 }
 
 const NOTE_TO_KEY = {
@@ -57,7 +61,9 @@ const NOTE_TO_KEY = {
     A4: "h",
     Bb4: "u",
     B4: "j",
-    C5: "k"
+    C5: "k",
+    Db5: "o",
+    D5: "l"
 }
 
 /*

@@ -5,15 +5,16 @@ import '../styles/Keyboard.css';
 
 function Keyboard() {
 
-    const {sliderVal, setSliderVal, progressWidth, setProgressWidth, thumbLeft, setThumbLeft, customSlider, playNote} = useContext(AppContext);
+    const {playNote, stopSound} = useContext(AppContext);
 
     return (
         <div className="keyboard">
           <div className="keys-row">
             {notes.map(({ note, noteOctave, keysClasses }) => (
-              <button className={keysClasses} onClick={() => playNote(noteOctave)}>{note}</button>
+              <button className={keysClasses} onClick={() => playNote(noteOctave)}></button>
             ))}
           </div>
+          {/* <button onClick={stopSound}>stop sound!</button> */}
         </div>
     )
 }
