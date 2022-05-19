@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10rem;
+  gap: 5rem;
   background-color: rgba(61, 61, 61, 0.1);
   padding: 2rem 0;
   width: 80%;
@@ -43,7 +43,7 @@
   width: 1.7em;
   height: 1.7em;
   background: #F6F2FF;
-  border-radius: 50%;
+  border-radius: 10%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;

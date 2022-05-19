@@ -6,11 +6,11 @@ import '../styles/Sliders.css';
 function Sliders() {
 
     return (
-        <div className="sliders-container">
+        <section className="sliders-container">
             <PingPong />
             <FeedbackDelay />
             <BitCrusher />
-        </div>
+        </section>
     )
 }
 

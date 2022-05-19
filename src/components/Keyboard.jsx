@@ -8,14 +8,14 @@ function Keyboard() {
     const {playNote, stopSound} = useContext(AppContext);
 
     return (
-        <div className="keyboard">
+        <section className="keyboard">
           <div className="keys-row">
             {notes.map(({ note, noteOctave, keysClasses }) => (
               <button className={keysClasses} onClick={() => playNote(noteOctave)}></button>
             ))}
           </div>
           {/* <button onClick={stopSound}>stop sound!</button> */}
-        </div>
+        </section>
     )
 }
 
