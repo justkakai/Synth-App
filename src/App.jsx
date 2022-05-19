@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import * as Tone from 'tone';
 import { notes, KEY_TO_NOTE } from './Notes';
+import AppContext from './contexts/AppContext';
+import Sliders from './components/Sliders';
+import Keyboard from './components/Keyboard';
 import './App.css';
 
 function App() {
 
-
-  const [sliderVal, setSliderVal] = useState("50");
+  const [sliderVal, setSliderVal] = useState("0.5");
   const [progressWidth, setProgressWidth] = useState("50%");
   const [thumbLeft, setThumbLeft] = useState("50%");
 
@@ -19,33 +21,25 @@ function App() {
   }
 
   function playNote(note) {
-    const delay = new Tone.Distortion(0.1).toDestination();
+    const delay = new Tone.PingPongDelay("4n", parseFloat(sliderVal)).toDestination();
     const synth = new Tone.FMSynth().toDestination().connect(delay);
     const now = Tone.now();
-    synth.triggerAttackRelease(note, "8n", now);
+    synth.triggerAttackRelease(note, "4n", now);
   }
 
-  window.addEventListener("keypress", function(e) {
+  window.addEventListener("keypress", function (e) {
     playNote(KEY_TO_NOTE[e.key]);
   })
 
+  const providerValues = { sliderVal, setSliderVal, progressWidth, setProgressWidth, thumbLeft, setThumbLeft, customSlider, playNote };
+
   return (
-    <main className="App">
-      <div className="range-slider">
-        <input onInput={customSlider} className="slider" type="range" name="slider" min="0" max="100" value={sliderVal} step="10" />
-        <div style={{left: `${thumbLeft}`}} className="slider-thumb">
-          <div className="tool-tip">{sliderVal}</div>
-        </div>
-        <div style={{width: `${progressWidth}`}} className="progress"></div>
-      </div>
-      <div className="keyboard">
-        <div className="keys-row">
-          {notes.map(({ note, noteOctave, keysClasses }) => (
-            <button className={keysClasses} onClick={() => playNote(noteOctave)}>{note}</button>
-          ))}
-        </div>
-      </div>
-    </main>
+    <AppContext.Provider value={providerValues}>
+      <main className="App">
+        <Sliders />
+        <Keyboard />
+      </main>
+    </AppContext.Provider>
   );
 }
 

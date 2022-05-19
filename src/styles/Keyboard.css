@@ -1,0 +1,44 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    width: 50%;
+    background-color: black;
+    /* border: 4px solid firebrick; */
+  }
+  
+  .piano-key {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 4rem;
+    height: 18rem;
+    background-color: #F6F2FF;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+  }
+  
+  .piano-key:active {
+    background-color: rgba(3, 253, 3, 0.8);
+  }
+  
+  .black-key {
+    position: relative;
+    height: 12rem;
+    background-color: black;
+    margin: 0 -36px;
+    z-index: 2;
+    color: white;
+  }
+  
+  .black-key:active {
+    background-color: rgb(43, 43, 43)
+  }
+  
+  .keys-row {
+    display: flex;
+    gap: 0.5rem;
+  }
