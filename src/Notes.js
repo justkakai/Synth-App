@@ -13,6 +13,18 @@ const playC4 = () => {
 */
 
 const notes = [
+    { note: "C", noteOctave: "C3", keysClasses: "white-key piano-key" },
+    { note: "Db", noteOctave: "Db3", keysClasses: "black-key piano-key" },
+    { note: "D", noteOctave: "D3", keysClasses: "white-key piano-key" },
+    { note: "Eb", noteOctave: "Eb3", keysClasses: "black-key piano-key" },
+    { note: "E", noteOctave: "E3", keysClasses: "white-key piano-key" },
+    { note: "F", noteOctave: "F3", keysClasses: "white-key piano-key" },
+    { note: "Gb", noteOctave: "Gb3", keysClasses: "black-key piano-key" },
+    { note: "G", noteOctave: "G3", keysClasses: "white-key piano-key" },
+    { note: "Ab", noteOctave: "Ab3", keysClasses: "black-key piano-key" },
+    { note: "A", noteOctave: "A3", keysClasses: "white-key piano-key" },
+    { note: "Bb", noteOctave: "Bb3", keysClasses: "black-key piano-key" },
+    { note: "B", noteOctave: "B3", keysClasses: "white-key piano-key" },
     { note: "C", noteOctave: "C4", keysClasses: "white-key piano-key" },
     { note: "Db", noteOctave: "Db4", keysClasses: "black-key piano-key" },
     { note: "D", noteOctave: "D4", keysClasses: "white-key piano-key" },
@@ -28,6 +40,8 @@ const notes = [
     { note: "C", noteOctave: "C5", keysClasses: "white-key piano-key" },
     { note: "Db", noteOctave: "Db5", keysClasses: "black-key piano-key" },
     { note: "D", noteOctave: "D5", keysClasses: "white-key piano-key" },
+    { note: "Eb", noteOctave: "Eb5", keysClasses: "black-key piano-key" },
+    { note: "E", noteOctave: "E5", keysClasses: "white-key piano-key" }
 ]
 
 const KEY_TO_NOTE = {

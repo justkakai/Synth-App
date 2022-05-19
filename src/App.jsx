@@ -17,6 +17,8 @@ function App() {
 
   function playNote(note) {
 
+    // Tone.context.lookAhead = 0;
+
     const pingPongDelay = new Tone.PingPongDelay("4n", parseFloat(pingPongVal)).toDestination();
 
     /*  const autoWah = new Tone.AutoWah(100, 2, -300).toDestination();
@@ -28,7 +30,7 @@ function App() {
 
     // const oscillator = new Tone.Oscillator().connect(feedbackDelay).start();
 
-    const synth = new Tone.Synth().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
+    const synth = new Tone.MetalSynth().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
     const now = Tone.now();
     synth.triggerAttackRelease(note, "4n", now);

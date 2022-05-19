@@ -105,14 +105,26 @@
   pointer-events: none;
 }
 
-.ping-pong-slider .progress {
-  background: linear-gradient(90deg, #e048a6, #ffffff 100%);
+/* .ping-pong-slider .progress {
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
 }
 
 .feedback-slider .progress {
-  background: linear-gradient(90deg, #ff5f54, #ffffff 100%);
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
 }
 
 .bit-crusher-slider .progress {
-  background: linear-gradient(90deg, #1815e9, #ffffff 100%);
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
+} */
+
+.ping-pong-slider .progress {
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
+}
+
+.feedback-slider .progress {
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
+}
+
+.bit-crusher-slider .progress {
+  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
 }
