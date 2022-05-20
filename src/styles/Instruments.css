@@ -1,5 +1,4 @@
 .instruments-container {
-    /* border: 2px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,18 +10,17 @@
     padding: 1.5rem 3rem;
     outline: none;
     border: none;
-    font-family: "Cabinet-Medium", sans-serif;
+    font-family: var(--Cabinet-Medium);
     font-size: 1.5rem;
-    /* background-color: #eee; */
-    color: rgb(221, 221, 221);
+    color: var(--instruments-button-text-color);
     border-radius: 2px;
 
     /* glassmorphism */
-    background: rgba(255, 255, 255, 0.2);
+    background-color: var(--instruments-button-bg-color);
+    box-shadow: 0 4px 30px var(--instruments-button-bxshd);
     /* background: url(../images/blue-sky.png);
     background-size: cover;
     background-position: top left; */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     /* backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); */
 }

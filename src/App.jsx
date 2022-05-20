@@ -20,6 +20,7 @@ function App() {
   const [bitCrusherVal, setBitCrusherVal] = useState("8");
   const [bitCrusherProgress, setBitCrusherProgress] = useState("100%");
   const [instrument, setInstrument] = useState("Synth");
+  const [activeKey, setActiveKey] = useState("");
 
   function playNote(note) {
 
@@ -48,9 +49,10 @@ function App() {
 
   window.addEventListener("keypress", function (e) {
     playNote(KEY_TO_NOTE[e.key]);
+    setActiveKey(KEY_TO_NOTE[e.key]);
   })
 
-  const appValues = { playNote, stopSound };
+  const appValues = { activeKey, setActiveKey, playNote, stopSound };
 
   const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
 

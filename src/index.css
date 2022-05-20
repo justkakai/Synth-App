@@ -1,3 +1,51 @@
+:root {
+
+  /* general colors */
+  --main-white: #eee;
+  --main-black: black;
+  --background-color-purple: #6b48ca;
+  --background-color: #313131;
+
+  /* slider section colors */
+  --sliders-section-bg-color: rgba(61, 61, 61, 0.4);
+  --slider-bg-color: #383838;
+  --slider-bxshd-1: var(--main-black);
+  --slider-bxshd-2: #909090;
+  --slider-thumb-bg-color: #F6F2FF;
+  --slider-thumb-bxshd: #909090;
+  --slider-thumb-BEFORE-bg-color: #333;
+  --slider-thumb-BEFORE-bg-color-HOVER: #15a8d4;
+  --slider-tooltip-bxshd-1: var(--background-color);
+  --slider-tooltip-bxshd-2: #909090;
+
+  --general-progress-linear-bg-1: #E07BE0;
+  --general-progress-linear-bg-2: #932F6D;
+
+  /* instruments section colors */
+
+  --instruments-button-text-color: var(--main-white);
+  --instruments-button-bg-color: rgba(255, 255, 255, 0.2);
+  --instruments-button-bxshd: rgba(0, 0, 0, 0.1);
+
+  /* keyboard section colors */
+
+  --keyboard-bg-color: rgba(0, 0, 0, 0.6);
+  --white-key-color: var(--main-white);
+  --white-key-active-color: rgba(174, 3, 253, 0.8);
+  --black-key-color: var(--main-black);
+  --black-key-active-color: rgb(82, 82, 82);
+  
+  /* fonts */
+  --Clash-Light: "Clash-Light", sans-serif;
+  --Clash-Regular: "Clash-Regular", sans-serif;
+  --Clash-Medium: "Clash-Medium", sans-serif;
+  --Satoshi-Regular: "Satoshi-Regular", sans-serif;
+  --Cabinet-Regular: "Cabinet-Regular", sans-serif;
+  --Cabinet-Medium: "Cabinet-Medium", sans-serif;
+  --PolySans: "PolySans", sans-serif;
+
+}
+
 * {
   margin: 0;
   padding: 0;

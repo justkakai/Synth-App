@@ -5,9 +5,8 @@
     align-items: center;
     gap: 0.5rem;
     width: 80%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--keyboard-bg-color);
     padding-bottom: 2rem;
-    /* border: 4px solid firebrick; */
   }
   
   .piano-key {
@@ -16,27 +15,26 @@
     justify-content: center;
     width: 4rem;
     height: 20rem;
-    background-color: #eee;
+    background-color: var(--white-key-color);
     outline: none;
     border: none;
     border-radius: 2px;
   }
   
   .piano-key:active {
-    background-color: rgba(174, 3, 253, 0.8);
+    background-color: var(--white-key-active-color);
   }
   
   .black-key {
     position: relative;
     height: 12rem;
-    background-color: black;
+    background-color: var(--black-key-color);
     margin: 0 -36px;
     z-index: 2;
-    color: white;
   }
   
   .black-key:active {
-    background-color: rgb(82, 82, 82)
+    background-color: var(--black-key-active-color);
   }
   
   .keys-row {
