@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import AppContext from '../../contexts/AppContext';
+// import AppContext from '../../contexts/AppContext';
+import CrusherContext from '../../contexts/CrusherContext';
 import '../../styles/slider-styles/BitCrusher.css';
 
 function BitCrusher() {
 
-    const { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress, playNote, stopSound } = useContext(AppContext);
+    const { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress } = useContext(CrusherContext);
 
     function bitCrusherSlider(e) {
         const maxVal = e.target.max;

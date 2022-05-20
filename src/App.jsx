@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import * as Tone from 'tone';
-import { notes, KEY_TO_NOTE } from './Notes';
+import { KEY_TO_NOTE } from './Notes';
 import AppContext from './contexts/AppContext';
+import PingPongContext from './contexts/PingPongContext';
+import FeedbackContext from './contexts/FeedbackContext';
+import CrusherContext from './contexts/CrusherContext';
+import InstrumentsContext from './contexts/InstrumentsContext';
 import Sliders from './components/Sliders';
 import Instruments from './components/Instruments';
 import Keyboard from './components/Keyboard';
@@ -38,26 +42,40 @@ function App() {
     synth.triggerAttackRelease(note, "8n", now);
   }
 
-
   function stopSound() {
     Tone.Transport.stop();
   }
-
 
   window.addEventListener("keypress", function (e) {
     playNote(KEY_TO_NOTE[e.key]);
   })
 
-  const providerValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress, feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress, bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress, instrument, setInstrument, playNote, stopSound };
+  const appValues = { playNote, stopSound };
+
+  const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
+
+  const feedbackValues = { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress }
+
+  const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }
+
+  const instrumentValues = { instrument, setInstrument }
 
   return (
-    <AppContext.Provider value={providerValues}>
-      <main className="App">
-        <h1>VirtuoSynth</h1>
-        <Sliders />
-        <Instruments />
-        <Keyboard />
-      </main>
+    <AppContext.Provider value={appValues}>
+      <PingPongContext.Provider value={pingPongValues}>
+        <FeedbackContext.Provider value={feedbackValues}>
+          <CrusherContext.Provider value={crusherValues}>
+            <InstrumentsContext.Provider value={instrumentValues}>
+              <main className="App">
+                <h1>VirtuoSynth</h1>
+                <Sliders />
+                <Instruments />
+                <Keyboard />
+              </main>
+            </InstrumentsContext.Provider>
+          </CrusherContext.Provider>
+        </FeedbackContext.Provider>
+      </PingPongContext.Provider>
     </AppContext.Provider>
   );
 }

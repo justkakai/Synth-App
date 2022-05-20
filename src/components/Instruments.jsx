@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { notes } from '../Notes';
-import AppContext from '../contexts/AppContext';
+// import { notes } from '../Notes';
+// import AppContext from '../contexts/AppContext';
+import InstrumentsContext from '../contexts/InstrumentsContext';
 import '../styles/Instruments.css';
 
 function Instruments() {
 
-    const { instrument, setInstrument, playNote, stopSound } = useContext(AppContext);
+    const { instrument, setInstrument } = useContext(InstrumentsContext);
 
     const instrumentsArray = ["Synth", "FMSynth", "AMSynth", "MetalSynth", "PluckSynth"]
 

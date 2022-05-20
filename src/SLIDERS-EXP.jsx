@@ -1,11 +1,10 @@
 import { useContext } from 'react';
-// import AppContext from '../../contexts/AppContext';
-import PingPongContext from '../../contexts/PingPongContext';
+import AppContext from '../../contexts/AppContext';
 import '../../styles/slider-styles/PingPong.css';
 
 function PingPong() {
 
-    const { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress } = useContext(PingPongContext);
+    const { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress } = useContext(AppContext);
 
     function pingPongSlider(e) {
         const maxVal = e.target.max;

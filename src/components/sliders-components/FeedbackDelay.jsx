@@ -1,12 +1,13 @@
 import { useContext } from 'react';
-import AppContext from '../../contexts/AppContext';
+// import AppContext from '../../contexts/AppContext';
+import FeedbackContext from '../../contexts/FeedbackContext';
 import '../../styles/slider-styles/FeedbackDelay.css';
 
 function FeedbackDelay() {
 
-    const { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress, playNote, stopSound } = useContext(AppContext);
+    const { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress } = useContext(FeedbackContext);
 
-    function pingPongSlider(e) {
+    function FeedbackSlider(e) {
         const maxVal = e.target.max;
         const val = (e.target.value / maxVal) * 100 + "%";
         setFeedbackVal(e.target.value);
@@ -15,7 +16,7 @@ function FeedbackDelay() {
 
     return (
             <div className=" sliders-general feedback-slider">
-                <input onInput={pingPongSlider} className="slider" type="range" name="slider" min="0" max="1" value={feedbackVal} step="0.01" />
+                <input onInput={FeedbackSlider} className="slider" type="range" name="slider" min="0" max="1" value={feedbackVal} step="0.01" />
                 <div style={{ left: `${feedbackProgress}` }} className="slider-thumb">
                     <div className="tool-tip">{feedbackVal}</div>
                 </div>
