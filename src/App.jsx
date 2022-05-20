@@ -35,7 +35,7 @@ function App() {
     const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
     const now = Tone.now();
-    synth.triggerAttackRelease(note, "4n", now);
+    synth.triggerAttackRelease(note, "8n", now);
   }
 
 

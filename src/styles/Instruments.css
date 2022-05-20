@@ -13,6 +13,16 @@
     border: none;
     font-family: "Cabinet-Medium", sans-serif;
     font-size: 1.5rem;
-    background-color: rgba(32, 29, 29, 0.3);
-    color: #eee;
+    /* background-color: #eee; */
+    color: rgb(221, 221, 221);
+    border-radius: 2px;
+
+    /* glassmorphism */
+    background: rgba(255, 255, 255, 0.2);
+    /* background: url(../images/blue-sky.png);
+    background-size: cover;
+    background-position: top left; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
 }
