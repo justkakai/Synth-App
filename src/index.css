@@ -1,9 +1,9 @@
 :root {
-
   /* general colors */
   --main-white: #eee;
   --main-black: black;
-  --background-color-purple: #6b48ca;
+  --main-black-lighter: rgba(0, 0, 0, 0.7);
+  --main-purple: #6b48ca;
   --background-color: #313131;
 
   /* slider section colors */
@@ -12,14 +12,16 @@
   --slider-bxshd-1: var(--main-black);
   --slider-bxshd-2: #909090;
   --slider-thumb-bg-color: #F6F2FF;
-  --slider-thumb-bxshd: #909090;
+  --slider-thumb-bxshd: var(--slider-bxshd-2);
   --slider-thumb-BEFORE-bg-color: #333;
-  --slider-thumb-BEFORE-bg-color-HOVER: #15a8d4;
+  --slider-thumb-BEFORE-bg-color-HOVER: var(--main-purple);
   --slider-tooltip-bxshd-1: var(--background-color);
-  --slider-tooltip-bxshd-2: #909090;
+  --slider-tooltip-bxshd-2: var(--slider-bxshd-2);
 
-  --general-progress-linear-bg-1: #E07BE0;
-  --general-progress-linear-bg-2: #932F6D;
+  /* --general-progress-linear-bg-1: #E07BE0; */
+  /* --general-progress-linear-bg-2: #932F6D; */
+  --general-progress-linear-bg-1: var(--main-black-lighter);
+  --general-progress-linear-bg-2: var(--main-black-lighter);
 
   /* instruments section colors */
 
@@ -43,7 +45,6 @@
   --Cabinet-Regular: "Cabinet-Regular", sans-serif;
   --Cabinet-Medium: "Cabinet-Medium", sans-serif;
   --PolySans: "PolySans", sans-serif;
-
 }
 
 * {
@@ -88,12 +89,7 @@
 }
 
 body {
-  font-family: "Clash-Medium", sans-serif;
+  font-family: var(--Cabinet-Medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
