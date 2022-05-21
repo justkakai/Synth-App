@@ -21,20 +21,12 @@
     border-radius: 2px;
   }
   
-  .piano-key:active {
-    background-color: var(--white-key-active-color);
-  }
-  
   .black-key {
     position: relative;
     height: 12rem;
     background-color: var(--black-key-color);
     margin: 0 -36px;
     z-index: 2;
-  }
-  
-  .black-key:active {
-    background-color: var(--black-key-active-color);
   }
   
   .keys-row {
