@@ -23,21 +23,20 @@ function App() {
   const [activeKey, setActiveKey] = useState("");
 
   function playNote(note) {
-
-    // Tone.context.lookAhead = 0;
+    Tone.Destination.mute = false;
 
     const pingPongDelay = new Tone.PingPongDelay("8n", parseFloat(pingPongVal)).toDestination();
-
-    /*  const autoWah = new Tone.AutoWah(100, 2, -300).toDestination();
-        autoWah.Q.value = 1;  */
 
     const feedbackDelay = new Tone.FeedbackDelay(0.125, parseFloat(feedbackVal)).toDestination();
 
     const bitCrusher = new Tone.BitCrusher(parseInt(bitCrusherVal)).toDestination();
 
-    // const oscillator = new Tone.Oscillator().connect(feedbackDelay).start();
+    const vol = new Tone.Volume(-12).toDestination();
 
-    const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
+    const synth = instrument === "DuoSynth" ?
+      new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher).connect(vol)
+      :
+      new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
     const now = Tone.now();
     synth.triggerAttackRelease(note, "8n", now);
@@ -46,28 +45,45 @@ function App() {
   function playLaptopKeys(e) {
     playNote(KEY_TO_NOTE[e.key]);
     setActiveKey(KEY_TO_NOTE[e.key]);
+    setTimeout(() => {
+      setActiveKey("");
+    }, 100)
   }
 
   useEffect(() => {
     window.addEventListener('keypress', playLaptopKeys);
 
-    return function() {
+    return function () {
       window.removeEventListener('keypress', playLaptopKeys);
     }
   });
 
   function stopSound() {
-    Tone.Transport.stop();
+    Tone.Destination.mute = true;
   }
 
+  /*
+    useEffect(() => {
+      if (navigator.requestMidiAccess) {
+        navigator.requestMidiAccess().then(success, failure);
+      } else {
+        console.log('requestMidiAccess not found');
+      }
+    });
+  
+    function failure() {
+      console.log('could not connect to MIDI');
+    }
+  
+    function success(midiAccess) {
+      console.log(midiAccess);
+    }
+    */
+
   const appValues = { activeKey, setActiveKey, playNote, stopSound };
-
   const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
-
   const feedbackValues = { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress }
-
   const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }
-
   const instrumentValues = { instrument, setInstrument }
 
   return (

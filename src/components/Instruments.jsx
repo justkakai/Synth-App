@@ -8,7 +8,7 @@ function Instruments() {
 
     const { instrument, setInstrument } = useContext(InstrumentsContext);
 
-    const instrumentsArray = ["Synth", "FMSynth", "AMSynth", "MetalSynth", "PluckSynth"]
+    const instrumentsArray = ["Synth", "FMSynth", "AMSynth", "MetalSynth", "DuoSynth"]
 
     return (
         <section className="instruments-section">
