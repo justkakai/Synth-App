@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Tone from 'tone';
 import { KEY_TO_NOTE } from './Notes';
 import AppContext from './contexts/AppContext';
@@ -43,14 +43,22 @@ function App() {
     synth.triggerAttackRelease(note, "8n", now);
   }
 
+  function playLaptopKeys(e) {
+    playNote(KEY_TO_NOTE[e.key]);
+    setActiveKey(KEY_TO_NOTE[e.key]);
+  }
+
+  useEffect(() => {
+    window.addEventListener('keypress', playLaptopKeys);
+
+    return function() {
+      window.removeEventListener('keypress', playLaptopKeys);
+    }
+  });
+
   function stopSound() {
     Tone.Transport.stop();
   }
-
-  window.addEventListener("keypress", function (e) {
-    playNote(KEY_TO_NOTE[e.key]);
-    setActiveKey(KEY_TO_NOTE[e.key]);
-  })
 
   const appValues = { activeKey, setActiveKey, playNote, stopSound };
 
