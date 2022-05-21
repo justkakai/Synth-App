@@ -5,19 +5,22 @@ import '../styles/Keyboard.css';
 
 function Keyboard() {
 
-  const { activeKey, setActiveKey, playNote, stopSound } = useContext(AppContext);
+  const { activeKey, setActiveKey, playbackArray, playNote } = useContext(AppContext);
 
   return (
     <section className="keyboard">
+      <div className="keyboard-display">
+        <div className="keys-played-display">{playbackArray.join(" ")}</div>
+      </div>
       <div className="keys-row">
         {notes.map(({ note, noteOctave, keysClasses }) => (
           <button
             style={
               activeKey === noteOctave ?
-                keysClasses === "white-key piano-key" ? { backgroundColor: "rgba(174, 3, 253, 0.8)" } : { backgroundColor: "rgb(82, 82, 82)" }
+                keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-active-color)" } : { backgroundColor: "var(--black-key-active-color)" }
                 :
-                keysClasses === "white-key piano-key" ? { backgroundColor: "#eee" } : { backgroundColor: "black" }}
-            className={keysClasses} onMouseDown={() => { playNote(noteOctave); setActiveKey(noteOctave); setTimeout(() => { setActiveKey(""); }, 100) }}></button>
+                keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-color)" } : { backgroundColor: "var(--black-key-color)" }}
+            className={keysClasses} onMouseDown={() => { playNote(noteOctave); setActiveKey(noteOctave); setTimeout(() => { setActiveKey(""); }, 200) }}></button>
         ))}
       </div>
       {/* <button onClick={stopSound}>stop sound!</button> */}

@@ -21,6 +21,7 @@ function App() {
   const [bitCrusherProgress, setBitCrusherProgress] = useState("100%");
   const [instrument, setInstrument] = useState("Synth");
   const [activeKey, setActiveKey] = useState("");
+  const [playbackArray, setPlaybackArray] = useState([]);
 
   function playNote(note) {
     Tone.Destination.mute = false;
@@ -47,7 +48,7 @@ function App() {
     setActiveKey(KEY_TO_NOTE[e.key]);
     setTimeout(() => {
       setActiveKey("");
-    }, 100)
+    }, 200)
   }
 
   useEffect(() => {
@@ -57,6 +58,10 @@ function App() {
       window.removeEventListener('keypress', playLaptopKeys);
     }
   });
+
+  useEffect(() => {
+    setPlaybackArray(playbackArray => [...playbackArray].concat(activeKey));
+  }, [activeKey]);
 
   function stopSound() {
     Tone.Destination.mute = true;
@@ -80,7 +85,7 @@ function App() {
     }
     */
 
-  const appValues = { activeKey, setActiveKey, playNote, stopSound };
+  const appValues = { activeKey, setActiveKey, playbackArray, setPlaybackArray, playNote, stopSound };
   const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
   const feedbackValues = { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress }
   const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }
