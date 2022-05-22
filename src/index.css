@@ -13,7 +13,7 @@
   --slider-bg-color: #383838;
   --slider-bxshd-1: var(--main-black);
   --slider-bxshd-2: #909090;
-  --slider-thumb-bg-color: #F6F2FF;
+  --slider-thumb-bg-color: rgba(246, 242, 255, 0.8);
   --slider-thumb-bxshd: var(--slider-bxshd-2);
   --slider-thumb-BEFORE-bg-color: #333;
   --slider-thumb-BEFORE-bg-color-HOVER: var(--main-purple);
@@ -55,6 +55,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @font-face {

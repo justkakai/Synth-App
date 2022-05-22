@@ -1,16 +1,21 @@
 import { useContext } from 'react';
 import { notes } from '../Notes';
 import AppContext from '../contexts/AppContext';
+import { BsPlay, BsVolumeMute } from "react-icons/bs";
 import '../styles/Keyboard.css';
 
 function Keyboard() {
 
-  const { activeKey, setActiveKey, playbackArray, playNote } = useContext(AppContext);
+  const { activeKey, setActiveKey, playbackArray, playNote, stopSound, playSoundBack } = useContext(AppContext);
 
   return (
     <section className="keyboard">
       <div className="keyboard-display">
-        <div className="keys-played-display">{playbackArray.join("\xa0\xa0").replace(/b/g, '♭')}</div>
+        <BsPlay style={{ fontSize: "3rem", color: "grey" }} onClick={playSoundBack} />
+        <div className="keys-played-display">
+          {playbackArray.join("\xa0\xa0\xa0\xa0").replace(/b/g, '♭')}
+        </div>
+        <BsVolumeMute style={{ fontSize: "3rem", color: "grey" }} onClick={stopSound} />
       </div>
       <div className="keys-row">
         {notes.map(({ note, noteOctave, keysClasses }) => (

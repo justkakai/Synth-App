@@ -16,6 +16,7 @@ function PingPong() {
 
     return (
             <div className=" sliders-general ping-pong-slider">
+                <p>Ping Pong Delay</p>
                 <input onInput={pingPongSlider} className="slider" type="range" name="slider" min="0" max="1" value={pingPongVal} step="0.01" />
                 <div style={{ left: `${pingPongProgress}` }} className="slider-thumb">
                     <div className="tool-tip">{pingPongVal}</div>

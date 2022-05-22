@@ -16,6 +16,7 @@ function FeedbackDelay() {
 
     return (
             <div className=" sliders-general feedback-slider">
+                <p>Feedback Delay</p>
                 <input onInput={FeedbackSlider} className="slider" type="range" name="slider" min="0" max="1" value={feedbackVal} step="0.01" />
                 <div style={{ left: `${feedbackProgress}` }} className="slider-thumb">
                     <div className="tool-tip">{feedbackVal}</div>

@@ -45,23 +45,38 @@ const notes = [
 ]
 
 const KEY_TO_NOTE = {
-    a: "C4",
-    w: "Db4",
-    s: "D4",
-    e: "Eb4",
-    d: "E4",
-    f: "F4",
-    t: "Gb4",
-    g: "G4",
-    z: "Ab4",
-    h: "A4",
-    u: "Bb4",
-    j: "B4",
-    k: "C5",
-    o: "Db5",
-    l: "D5"
+    y: "C3",
+    s: "Db3",
+    x: "D3",
+    d: "Eb3",
+    c: "E3",
+    v: "F3",
+    g: "Gb3",
+    b: "G3",
+    h: "Ab3",
+    n: "A3",
+    j: "Bb3",
+    m: "B3",
+    q: "C4",
+    2: "Db4",
+    w: "D4",
+    3: "Eb4",
+    e: "E4",
+    r: "F4",
+    5: "Gb4",
+    t: "G4",
+    6: "Ab4",
+    z: "A4",
+    7: "Bb4",
+    u: "B4",
+    i: "C5",
+    9: "Db5",
+    o: "D5",
+    0: "Eb5",
+    p: "E5"
 }
 
+/*
 const NOTE_TO_KEY = {
     C4: "a",
     Db4: "w",
@@ -79,6 +94,7 @@ const NOTE_TO_KEY = {
     Db5: "o",
     D5: "l"
 }
+*/
 
 /*
 const notes = [
@@ -93,4 +109,4 @@ const notes = [
 ]
 */
 
-export { notes, KEY_TO_NOTE, NOTE_TO_KEY };
+export { notes, KEY_TO_NOTE };

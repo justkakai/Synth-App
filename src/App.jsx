@@ -30,12 +30,14 @@ function App() {
 
     const pingPongDelay = new Tone.PingPongDelay("8n", parseFloat(pingPongVal)).toDestination();
 
+    //const pingPongDelay = new Tone.Chebyshev(parseFloat(pingPongVal)*100).toDestination();
+
     const feedbackDelay = new Tone.FeedbackDelay(0.125, parseFloat(feedbackVal)).toDestination();
 
     const bitCrusher = new Tone.BitCrusher(parseInt(bitCrusherVal)).toDestination();
 
     // const vol = new Tone.Volume(-32).toDestination();
-    // const oscillator = new Tone.Oscillator();
+    // const osc = new Tone.Oscillator(note, "sine2").toDestination().start();
 
     const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
@@ -62,11 +64,22 @@ function App() {
   });
 
   useEffect(() => {
-    setPlaybackArray(playbackArray => [...playbackArray].concat(activeKey));
+    if (activeKey !== "" && activeKey !== undefined) {
+      setPlaybackArray(playbackArray => [...playbackArray].concat(activeKey));
+    }
   }, [activeKey]);
 
   function stopSound() {
     Tone.Destination.mute = true;
+  }
+
+  function playSoundBack() {
+    playbackArray.reduce(async (previousPromise, nextNote) => {
+      await previousPromise
+      return playNote(nextNote)
+    }, Promise.resolve([]));
+
+    console.log(playbackArray);
   }
 
   /*
@@ -87,7 +100,7 @@ function App() {
     }
     */
 
-  const appValues = { activeKey, setActiveKey, playbackArray, setPlaybackArray, playNote, stopSound };
+  const appValues = { activeKey, setActiveKey, playbackArray, setPlaybackArray, playNote, stopSound, playSoundBack };
   const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
   const feedbackValues = { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress }
   const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }

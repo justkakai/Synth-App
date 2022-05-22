@@ -1,11 +1,12 @@
 .sliders-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 5rem;
   background-color: var(--sliders-section-bg-color);
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 80%;
 }
 
@@ -14,6 +15,19 @@
   position: relative;
   display: flex;
   user-select: none;
+}
+
+.sliders-general p {
+  padding: 0.2rem;
+  background-color: rgb(61, 61, 61);
+  font-family: var(--Cabinet-Medium);
+  position: absolute;
+  top: 14px;
+  left: 0;
+  /* right: 0; */
+  color: rgb(163, 163, 163);
+  font-size: 1.1rem;
+  margin: 0 auto;
 }
 
 .sliders-general .slider {
@@ -39,10 +53,10 @@
 
 .sliders-general .slider-thumb {
   position: absolute;
-  width: 1.7em;
-  height: 1.7em;
+  width: 4em;
+  height: 1.3em;
   background-color: var(--slider-thumb-bg-color);
-  border-radius: 10%;
+  border-radius: 1%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -55,8 +69,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 0.7em;
-  height: 0.7em;
+  width: 3.6em;
+  height: 0.9em;
+  border-radius: 1%;
   background-color: var(--slider-thumb-BEFORE-bg-color);
   border-radius: inherit;
   transition: 0.3s;
@@ -64,6 +79,7 @@
 
 .sliders-general:hover .slider-thumb::before {
   background-color: var(--slider-thumb-BEFORE-bg-color-HOVER);
+  transition: 0.3s;
 }
 
 .sliders-general .tool-tip {
@@ -104,7 +120,9 @@
   pointer-events: none;
 }
 
-.ping-pong-slider .progress, .feedback-slider .progress, .bit-crusher-slider .progress {
+.ping-pong-slider .progress,
+.feedback-slider .progress,
+.bit-crusher-slider .progress {
   background: linear-gradient(90deg, var(--general-progress-linear-bg-1), var(--general-progress-linear-bg-2) 100%);
 }
 

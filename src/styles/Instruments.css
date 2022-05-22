@@ -1,3 +1,11 @@
+/* .instruments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+} */
+
 .instruments-container {
     display: flex;
     flex-direction: row;
@@ -7,7 +15,7 @@
 }
 
 .instruments-container button {
-    padding: 1.5rem 3rem;
+    padding: 1rem 3rem;
     outline: none;
     border: none;
     font-family: var(--Cabinet-Medium);
