@@ -10,7 +10,7 @@ function Keyboard() {
   return (
     <section className="keyboard">
       <div className="keyboard-display">
-        <div className="keys-played-display">{playbackArray.join(" ")}</div>
+        <div className="keys-played-display">{playbackArray.join("\xa0\xa0").replace(/b/g, '♭')}</div>
       </div>
       <div className="keys-row">
         {notes.map(({ note, noteOctave, keysClasses }) => (

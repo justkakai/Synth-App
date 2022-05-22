@@ -25,6 +25,7 @@ function App() {
 
   function playNote(note) {
     Tone.Destination.mute = false;
+    //Tone.setContext(new Tone.Context({ latencyHint : "balanced" }));
     //Tone.immediate();
 
     const pingPongDelay = new Tone.PingPongDelay("8n", parseFloat(pingPongVal)).toDestination();
@@ -33,15 +34,15 @@ function App() {
 
     const bitCrusher = new Tone.BitCrusher(parseInt(bitCrusherVal)).toDestination();
 
-    const vol = new Tone.Volume(-12).toDestination();
+    // const vol = new Tone.Volume(-32).toDestination();
+    // const oscillator = new Tone.Oscillator();
 
-    const synth = instrument === "DuoSynth" ?
-      new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher).connect(vol)
-      :
-      new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
+    const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
     const now = Tone.now();
     synth.triggerAttackRelease(note, "8n", now); // maybe try now + 0.05 to avoid performance-related pops?
+    //synth.triggerAttack(note, "8n", now + 0.05);
+    //synth.triggerRelease(now);
   }
 
   function playLaptopKeys(e) {
