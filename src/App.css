@@ -28,6 +28,16 @@ h1 {
   color: var(--main-white);
 }
 
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+::-webkit-scrollbar-track {
+  background: var(--main-black);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, grey 1%, var(--main-black-lighter) 100%);
+}
+
 
 
 

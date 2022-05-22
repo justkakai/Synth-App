@@ -17,7 +17,7 @@ function Keyboard() {
           <button
             style={
               activeKey === noteOctave ?
-                keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-active-color)" } : { backgroundColor: "var(--black-key-active-color)" }
+                keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-active-color)", top: "0.4rem" } : { backgroundColor: "var(--black-key-active-color)", marginTop: "0.4rem" }
                 :
                 keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-color)" } : { backgroundColor: "var(--black-key-color)" }}
             className={keysClasses} onMouseDown={() => { playNote(noteOctave); setActiveKey(noteOctave); setTimeout(() => { setActiveKey(""); }, 200) }}></button>

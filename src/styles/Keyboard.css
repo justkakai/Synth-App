@@ -26,16 +26,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--playback-array-display-bg-color);
+  /* background-color: var(--playback-array-display-bg-color); */
   width: 79.3%;
   height: 100%;
   padding-left: 2rem;
   overflow: auto;
-  /* border: 4px solid rgb(85, 85, 85); */
   background: url(../images/grey-gradient.png);
   background-position: bottom;
   background-repeat: repeat;
-  color: #fff;
+  color: var(--white);
   text-shadow: 0px 0px 2px var(--main-white);
 }
 
@@ -43,7 +42,7 @@
   content: "";
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--main-black-even-lighter);
   position: absolute;
   left: 0;
   top: 0;
@@ -53,9 +52,12 @@
   display: flex;
   /* gap: 0.5rem; */
   gap: 0.5rem;
+  /* border: 2px solid red; */
 }
 
 .piano-key {
+  position: relative;
+  top: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -64,6 +66,7 @@
   outline: none;
   border: none;
   border-radius: 2px;
+  transition: top 0.1s;
 }
 
 .black-key {
@@ -73,4 +76,5 @@
   /* margin: 0 -36px; */
   margin: 0 -36px;
   z-index: 2;
+  transition: margin 0.1s;
 }

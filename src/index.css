@@ -1,8 +1,10 @@
 :root {
   /* general colors */
+  --white: #fff;
   --main-white: #eee;
   --main-black: black;
   --main-black-lighter: rgba(0, 0, 0, 0.7);
+  --main-black-even-lighter: rgba(0, 0, 0, 0.5);
   --main-purple: rgba(107, 72, 202);
   --background-color: #313131;
 
