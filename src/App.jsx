@@ -25,6 +25,7 @@ function App() {
 
   function playNote(note) {
     Tone.Destination.mute = false;
+    //Tone.immediate();
 
     const pingPongDelay = new Tone.PingPongDelay("8n", parseFloat(pingPongVal)).toDestination();
 
@@ -40,7 +41,7 @@ function App() {
       new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
 
     const now = Tone.now();
-    synth.triggerAttackRelease(note, "8n", now);
+    synth.triggerAttackRelease(note, "8n", now); // maybe try now + 0.05 to avoid performance-related pops?
   }
 
   function playLaptopKeys(e) {

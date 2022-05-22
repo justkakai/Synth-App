@@ -36,6 +36,8 @@
   --white-key-active-color: rgba(174, 3, 253, 0.8);
   --black-key-color: var(--main-black);
   --black-key-active-color: rgb(82, 82, 82);
+  --keyboard-display-bg-color: var(--main-black);
+  --playback-array-display-bg-color: rgb(68, 68, 68);
   
   /* fonts */
   --Clash-Light: "Clash-Light", sans-serif;
@@ -90,6 +92,7 @@
 
 body {
   font-family: var(--Cabinet-Medium);
+  user-select: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
