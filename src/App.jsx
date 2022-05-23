@@ -15,13 +15,9 @@ import './App.css';
 function App() {
 
   const [reverbVal, setReverbVal] = useState("0");
-  const [reverbProgress, setReverbProgress] = useState("0%");
   const [pingPongVal, setPingPongVal] = useState("0.5");
-  const [pingPongProgress, setPingPongProgress] = useState("50%");
   const [chebyshevVal, setChebyshevVal] = useState("0");
-  const [chebyshevProgress, setChebyshevProgress] = useState("0%");
   const [bitCrusherVal, setBitCrusherVal] = useState("8");
-  const [bitCrusherProgress, setBitCrusherProgress] = useState("100%");
   const [instrument, setInstrument] = useState("Synth");
   const [activeKey, setActiveKey] = useState("");
   const [playbackArray, setPlaybackArray] = useState([]);
@@ -42,6 +38,7 @@ function App() {
 
     const now = Tone.now();
     synth.triggerAttackRelease(note, "8n", now); 
+
   }
 
   function playLaptopKeys(e) {
@@ -98,10 +95,10 @@ function App() {
     */
 
   const appValues = { activeKey, setActiveKey, playbackArray, setPlaybackArray, playNote, stopSound, playSoundBack };
-  const reverbValues = { reverbVal, setReverbVal, reverbProgress, setReverbProgress }
-  const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
-  const chebyshevValues = { chebyshevVal, setChebyshevVal, chebyshevProgress, setChebyshevProgress }
-  const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }
+  const reverbValues = { reverbVal, setReverbVal }
+  const pingPongValues = { pingPongVal, setPingPongVal }
+  const chebyshevValues = { chebyshevVal, setChebyshevVal }
+  const crusherValues = { bitCrusherVal, setBitCrusherVal }
   const instrumentValues = { instrument, setInstrument }
 
   return (

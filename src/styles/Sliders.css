@@ -22,8 +22,8 @@
   background-color: rgb(61, 61, 61);
   font-family: var(--Cabinet-Medium);
   position: absolute;
-  top: 14px;
-  left: 0;
+  top: 16px;
+  left: 10%;
   /* right: 0; */
   color: rgb(163, 163, 163);
   font-size: 1.1rem;
