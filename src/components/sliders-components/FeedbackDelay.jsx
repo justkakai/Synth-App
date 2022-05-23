@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import AppContext from '../../contexts/AppContext';
 import FeedbackContext from '../../contexts/FeedbackContext';
 import '../../styles/slider-styles/FeedbackDelay.css';
 

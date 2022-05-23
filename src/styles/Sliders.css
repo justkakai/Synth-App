@@ -137,3 +137,12 @@
 .bit-crusher-slider .progress {
   background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
 } */
+
+/**************************** MEDIA QUERIES ****************************/
+
+@media (max-width: 450px) {
+  .sliders-container {
+    width: 90%;
+    gap: 4rem;
+  }
+}

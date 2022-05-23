@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import AppContext from '../../contexts/AppContext';
 import PingPongContext from '../../contexts/PingPongContext';
 import '../../styles/slider-styles/PingPong.css';
 

@@ -1,16 +1,16 @@
-/* .instruments-section {
+.instruments-section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-} */
+    width: 80%;
+}
 
 .instruments-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    /* width: 80%; */
     gap: 2rem;
 }
 
@@ -32,4 +32,23 @@
     background-position: top left; */
     /* backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); */
+}
+
+/**************************** MEDIA QUERIES ****************************/
+
+@media (max-width: 1346px) {
+    .instruments-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 546px) {
+    .instruments-section {
+        display: none;
+    }
 }

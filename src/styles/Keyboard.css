@@ -10,6 +10,7 @@
 }
 
 .keyboard-display {
+  position: relative;
   font-family: var(--Satoshi-Regular);
   font-size: 1.2rem;
   display: flex;
@@ -65,7 +66,7 @@
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   /* box-shadow: 0px 5px 3px rgb(82, 82, 82); */
-   /* transition: box-shadow 0.1s; */
+  /* transition: box-shadow 0.1s; */
   transition: top 0.1s;
 }
 
@@ -76,4 +77,51 @@
   z-index: 2;
   /* box-shadow: 0px 5px 3px rgba(119, 119, 119, 0.7); */
   transition: margin 0.1s;
+}
+
+.react-icons {
+  font-size: 3rem;
+  color: grey;
+}
+
+/* .play-button {
+  position: sticky;
+} */
+
+/*------------------------------MEDIA QUERIES------------------------------*/
+
+@media (max-width: 1529px) {
+  .keyboard {
+    overflow-x: auto;
+    /* overflow-y: visible; */
+  }
+}
+
+@media (max-width: 1346px) {
+  .piano-key {
+    height: 15rem;
+  }
+  .black-key {
+    height: 9rem;
+  }
+}
+
+@media (max-width: 748px) {
+  .piano-key {
+    height: 10rem;
+  }
+  .black-key {
+    height: 6rem;
+  }
+  .react-icons {
+    font-size: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .sliders-container {
+    width: 90%;
+    gap: 4rem;
+  }
 }

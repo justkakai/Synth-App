@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import AppContext from '../../contexts/AppContext';
 import CrusherContext from '../../contexts/CrusherContext';
 import '../../styles/slider-styles/BitCrusher.css';
 

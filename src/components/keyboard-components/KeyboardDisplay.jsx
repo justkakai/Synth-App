@@ -8,11 +8,11 @@ function KeyboardDisplay() {
 
     return (
         <div className="keyboard-display">
-            <BsPlay style={{ fontSize: "3rem", color: "grey" }} onClick={playSoundBack} />
+            <BsPlay className='react-icons play-button' onClick={playSoundBack} />
             <div className="keys-played-display">
                 {playbackArray.join("\xa0\xa0\xa0\xa0").replace(/b/g, '♭')}
             </div>
-            <BsVolumeMute style={{ fontSize: "3rem", color: "grey" }} onClick={stopSound} />
+            <BsVolumeMute className='react-icons mute-button' onClick={stopSound} />
         </div>
     )
 }
