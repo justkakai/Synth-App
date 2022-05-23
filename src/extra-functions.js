@@ -57,3 +57,24 @@ function playNote(note) {
     //synth.triggerAttack(note, "8n", now + 0.05);
     //synth.triggerRelease(now);
   }
+
+
+
+
+
+
+  useEffect(() => {
+    if (navigator.requestMidiAccess) {
+      navigator.requestMidiAccess().then(success, failure);
+    } else {
+      console.log('requestMidiAccess not found');
+    }
+  });
+
+  function failure() {
+    console.log('could not connect to MIDI');
+  }
+
+  function success(midiAccess) {
+    console.log(midiAccess);
+  }

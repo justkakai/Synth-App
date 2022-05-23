@@ -1,10 +1,15 @@
 import { useContext } from 'react';
+import * as Tone from 'tone';
 import AppContext from '../../contexts/AppContext';
 import { BsPlay, BsVolumeMute } from "react-icons/bs";
 
 function KeyboardDisplay() {
 
-    const { playbackArray, stopSound, playSoundBack } = useContext(AppContext);
+    const { playbackArray, playSoundBack } = useContext(AppContext);
+
+    function stopSound() {
+        Tone.Destination.mute = true;
+      }
 
     return (
         <div className="keyboard-display">
