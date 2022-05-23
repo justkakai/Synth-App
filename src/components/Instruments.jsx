@@ -1,6 +1,4 @@
 import { useContext } from 'react';
-// import { notes } from '../Notes';
-// import AppContext from '../contexts/AppContext';
 import InstrumentsContext from '../contexts/InstrumentsContext';
 import '../styles/Instruments.css';
 
