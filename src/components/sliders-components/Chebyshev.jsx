@@ -16,7 +16,7 @@ function Chebyshev() {
     return (
             <div className=" sliders-general chebyshev-slider">
                 <p>Chebyshev</p>
-                <input onInput={ChebyshevSlider} className="slider" type="range" name="slider" min="0" max="1" value={chebyshevVal} step="0.01" />
+                <input onInput={ChebyshevSlider} className="slider" type="range" name="slider" min="0" max="100" value={chebyshevVal} step="1" />
                 <div style={{ left: `${chebyshevProgress}` }} className="slider-thumb">
                     <div className="tool-tip">{chebyshevVal}</div>
                 </div>
