@@ -3,7 +3,7 @@ import * as Tone from 'tone';
 import { KEY_TO_NOTE } from './Notes';
 import AppContext from './contexts/AppContext';
 import PingPongContext from './contexts/PingPongContext';
-import FeedbackContext from './contexts/FeedbackContext';
+import ChebyshevContext from './contexts/ChebyshevContext';
 import CrusherContext from './contexts/CrusherContext';
 import InstrumentsContext from './contexts/InstrumentsContext';
 import Sliders from './components/Sliders';
@@ -15,8 +15,8 @@ function App() {
 
   const [pingPongVal, setPingPongVal] = useState("0.5");
   const [pingPongProgress, setPingPongProgress] = useState("50%");
-  const [feedbackVal, setFeedbackVal] = useState("0.5");
-  const [feedbackProgress, setFeedbackProgress] = useState("50%");
+  const [chebyshevVal, setChebyshevVal] = useState("0");
+  const [chebyshevProgress, setChebyshevProgress] = useState("0%");
   const [bitCrusherVal, setBitCrusherVal] = useState("8");
   const [bitCrusherProgress, setBitCrusherProgress] = useState("100%");
   const [instrument, setInstrument] = useState("Synth");
@@ -29,11 +29,11 @@ function App() {
 
     const pingPongDelay = new Tone.PingPongDelay("8n", parseFloat(pingPongVal)).toDestination();
 
-    const feedbackDelay = new Tone.FeedbackDelay(0.125, parseFloat(feedbackVal)).toDestination();
+    const chebyshev = new Tone.Chebyshev(parseFloat(chebyshevVal)*100).toDestination();
 
     const bitCrusher = new Tone.BitCrusher(parseInt(bitCrusherVal)).toDestination();
 
-    const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(feedbackDelay).connect(bitCrusher);
+    const synth = new Tone[instrument]().toDestination().connect(pingPongDelay).connect(chebyshev).connect(bitCrusher);
 
     const now = Tone.now();
     synth.triggerAttackRelease(note, "8n", now); 
@@ -94,14 +94,14 @@ function App() {
 
   const appValues = { activeKey, setActiveKey, playbackArray, setPlaybackArray, playNote, stopSound, playSoundBack };
   const pingPongValues = { pingPongVal, setPingPongVal, pingPongProgress, setPingPongProgress }
-  const feedbackValues = { feedbackVal, setFeedbackVal, feedbackProgress, setFeedbackProgress }
+  const chebyshevValues = { chebyshevVal, setChebyshevVal, chebyshevProgress, setChebyshevProgress }
   const crusherValues = { bitCrusherVal, setBitCrusherVal, bitCrusherProgress, setBitCrusherProgress }
   const instrumentValues = { instrument, setInstrument }
 
   return (
     <AppContext.Provider value={appValues}>
       <PingPongContext.Provider value={pingPongValues}>
-        <FeedbackContext.Provider value={feedbackValues}>
+        <ChebyshevContext.Provider value={chebyshevValues}>
           <CrusherContext.Provider value={crusherValues}>
             <InstrumentsContext.Provider value={instrumentValues}>
               <main className="App">
@@ -112,7 +112,7 @@ function App() {
               </main>
             </InstrumentsContext.Provider>
           </CrusherContext.Provider>
-        </FeedbackContext.Provider>
+        </ChebyshevContext.Provider>
       </PingPongContext.Provider>
     </AppContext.Provider>
   );

@@ -121,7 +121,7 @@
 }
 
 .ping-pong-slider .progress,
-.feedback-slider .progress,
+.chebyshev-slider .progress,
 .bit-crusher-slider .progress {
   background: linear-gradient(90deg, var(--general-progress-linear-bg-1), var(--general-progress-linear-bg-2) 100%);
 }
