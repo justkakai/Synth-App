@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { ChebyshevContext } from '../../contexts/ChebyshevContext';
-import '../../styles/slider-styles/Chebyshev.css';
 
 function Chebyshev() {
 

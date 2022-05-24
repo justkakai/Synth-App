@@ -4,7 +4,6 @@
   justify-content: flex-end;
   align-items: center;
   width: 80%;
-  /* width: 96rem; */
   background-color: var(--keyboard-bg-color);
   padding-bottom: 2rem;
 }
@@ -26,7 +25,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* background-color: var(--playback-array-display-bg-color); */
   width: 79.3%;
   height: 100%;
   padding-left: 2rem;
@@ -65,8 +63,6 @@
   border: none;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
-  /* box-shadow: 0px 5px 3px rgb(82, 82, 82); */
-  /* transition: box-shadow 0.1s; */
   transition: top 0.1s;
 }
 
@@ -75,25 +71,19 @@
   height: 12rem;
   margin: 0 -36px;
   z-index: 2;
-  /* box-shadow: 0px 5px 3px rgba(119, 119, 119, 0.7); */
   transition: margin 0.1s;
 }
 
 .react-icons {
   font-size: 3rem;
-  color: grey;
+  color: var(--react-icons-color);
 }
-
-/* .play-button {
-  position: sticky;
-} */
 
 /*------------------------------MEDIA QUERIES------------------------------*/
 
 @media (max-width: 1529px) {
   .keyboard {
     overflow-x: auto;
-    /* overflow-y: visible; */
   }
 }
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { NOTES, KEY_TO_NOTE } from '../../notesData';
 import usePlay from '../../custom-hooks/usePlay';
 
-function KeyboardKeys({playbackArray, setPlaybackArray}) {
+function KeyboardKeys({ playbackArray, setPlaybackArray }) {
 
   const [activeKey, setActiveKey] = useState("");
   const playNote = usePlay();
@@ -34,13 +34,26 @@ function KeyboardKeys({playbackArray, setPlaybackArray}) {
     <div className="keys-row">
       {NOTES.map(({ noteOctave, keysClasses }) => (
         <button
-        key={noteOctave}
+          key={noteOctave}
           style={
             activeKey === noteOctave ?
-              keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-active-color)", top: "0.4rem" } : { backgroundColor: "var(--black-key-active-color)", marginTop: "0.4rem" }
+              keysClasses === "white-key piano-key" ?
+                { backgroundColor: "var(--white-key-active-color)", top: "0.4rem" }
+                :
+                { backgroundColor: "var(--black-key-active-color)", marginTop: "0.4rem" }
               :
-              keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-color)" } : { backgroundColor: "var(--black-key-color)" }}
-          className={keysClasses} onMouseDown={() => { playNote(noteOctave); setActiveKey(noteOctave); setTimeout(() => { setActiveKey(""); }, 200) }}></button>
+              keysClasses === "white-key piano-key" ?
+                { backgroundColor: "var(--white-key-color)" }
+                :
+                { backgroundColor: "var(--black-key-color)" }}
+          className={keysClasses}
+          onMouseDown={() => {
+            playNote(noteOctave);
+            setActiveKey(noteOctave);
+            setTimeout(() => {
+              setActiveKey("");
+            }, 200)
+          }}></button>
       ))}
     </div>
   )

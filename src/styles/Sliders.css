@@ -19,12 +19,12 @@
 
 .sliders-general p {
   padding: 0.2rem;
-  background-color: rgb(61, 61, 61);
+  background-color: var(--sliders-label-bg-color);
   font-family: var(--Cabinet-Medium);
   position: absolute;
   top: 16px;
   left: 10%;
-  color: rgb(163, 163, 163);
+  color: var(--sliders-label-text-color);
   font-size: 1.1rem;
   margin: 0 auto;
 }

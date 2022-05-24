@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { CrusherContext } from '../../contexts/CrusherContext';
-import '../../styles/slider-styles/BitCrusher.css';
 
 function BitCrusher() {
 

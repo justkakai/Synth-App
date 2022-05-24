@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { ReverbContext } from '../../contexts/ReverbContext';
-import '../../styles/slider-styles/Reverb.css';
 
 function Reverb() {
 

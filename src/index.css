@@ -6,22 +6,21 @@
   --main-black-lighter: rgba(0, 0, 0, 0.7);
   --main-black-even-lighter: rgba(0, 0, 0, 0.5);
   --main-purple: rgba(107, 72, 202);
-  --background-color: #313131;
+  --background-color: rgb(49, 49, 49);
 
   /* slider section colors */
+  --sliders-label-text-color: rgb(163, 163, 163);
+  --sliders-label-bg-color: rgb(61, 61, 61);
   --sliders-section-bg-color: rgba(61, 61, 61, 0.4);
   --slider-bg-color: #383838;
   --slider-bxshd-1: var(--main-black);
-  --slider-bxshd-2: #909090;
+  --slider-bxshd-2: rgb(144, 144, 144);
   --slider-thumb-bg-color: rgba(246, 242, 255, 0.8);
   --slider-thumb-bxshd: var(--slider-bxshd-2);
   --slider-thumb-BEFORE-bg-color: #333;
   --slider-thumb-BEFORE-bg-color-HOVER: var(--main-purple);
   --slider-tooltip-bxshd-1: var(--background-color);
   --slider-tooltip-bxshd-2: var(--slider-bxshd-2);
-
-  /* --general-progress-linear-bg-1: #E07BE0; */
-  /* --general-progress-linear-bg-2: #932F6D; */
   --general-progress-linear-bg-1: var(--main-black-lighter);
   --general-progress-linear-bg-2: var(--main-black-lighter);
 
@@ -40,15 +39,12 @@
   --black-key-active-color: rgb(82, 82, 82);
   --keyboard-display-bg-color: var(--main-black);
   --playback-array-display-bg-color: rgb(68, 68, 68);
+  --react-icons-color: grey;
   
   /* fonts */
-  --Clash-Light: "Clash-Light", sans-serif;
-  --Clash-Regular: "Clash-Regular", sans-serif;
-  --Clash-Medium: "Clash-Medium", sans-serif;
   --Satoshi-Regular: "Satoshi-Regular", sans-serif;
   --Cabinet-Regular: "Cabinet-Regular", sans-serif;
   --Cabinet-Medium: "Cabinet-Medium", sans-serif;
-  --PolySans: "PolySans", sans-serif;
 }
 
 * {
@@ -59,21 +55,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-@font-face {
-  font-family: "Clash-Light";
-  src: url("./fonts/ClashDisplay/ClashDisplay-Light.otf");
-}
-
-@font-face {
-  font-family: "Clash-Regular";
-  src: url("./fonts/ClashDisplay/ClashDisplay-Regular.otf");
-}
-
-@font-face {
-  font-family: "Clash-Medium";
-  src: url("./fonts/ClashDisplay/ClashDisplay-Medium.otf");
 }
 
 @font-face {
@@ -89,11 +70,6 @@ html {
 @font-face {
   font-family: "Cabinet-Medium";
   src: url("./fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf");
-}
-
-@font-face {
-  font-family: "PolySans";
-  src: url("./fonts/PolySans/PolySans-Slim-Italic.otf");
 }
 
 body {
