@@ -24,7 +24,6 @@
   position: absolute;
   top: 16px;
   left: 10%;
-  /* right: 0; */
   color: rgb(163, 163, 163);
   font-size: 1.1rem;
   margin: 0 auto;
@@ -125,18 +124,6 @@
 .bit-crusher-slider .progress {
   background: linear-gradient(90deg, var(--general-progress-linear-bg-1), var(--general-progress-linear-bg-2) 100%);
 }
-
-/* .ping-pong-slider .progress {
-  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
-}
-
-.feedback-slider .progress {
-  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
-}
-
-.bit-crusher-slider .progress {
-  background: linear-gradient(90deg, #E07BE0, #932F6D 100%);
-} */
 
 /**************************** MEDIA QUERIES ****************************/
 

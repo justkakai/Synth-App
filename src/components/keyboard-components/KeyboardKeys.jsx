@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { notes, KEY_TO_NOTE } from '../../Notes';
+import { NOTES, KEY_TO_NOTE } from '../../notesData';
 import usePlay from '../../custom-hooks/usePlay';
 
 function KeyboardKeys({playbackArray, setPlaybackArray}) {
@@ -27,12 +27,14 @@ function KeyboardKeys({playbackArray, setPlaybackArray}) {
     if (activeKey !== "" && activeKey !== undefined) {
       setPlaybackArray(() => [...playbackArray].concat(activeKey));
     }
+    // eslint-disable-next-line 
   }, [activeKey]);
 
   return (
     <div className="keys-row">
-      {notes.map(({ noteOctave, keysClasses }) => (
+      {NOTES.map(({ noteOctave, keysClasses }) => (
         <button
+        key={noteOctave}
           style={
             activeKey === noteOctave ?
               keysClasses === "white-key piano-key" ? { backgroundColor: "var(--white-key-active-color)", top: "0.4rem" } : { backgroundColor: "var(--black-key-active-color)", marginTop: "0.4rem" }
