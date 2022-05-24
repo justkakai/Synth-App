@@ -1,5 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const CrusherContext = createContext(null);
+const CrusherContext = createContext(0);
 
-export default CrusherContext;
+function CrusherProvider({ children }) {
+
+    const [bitCrusherVal, setBitCrusherVal] = useState("8")
+
+    return (
+        <CrusherContext.Provider value={{bitCrusherVal, setBitCrusherVal}}>
+            {children}
+        </CrusherContext.Provider>
+    );
+}
+
+export { CrusherContext, CrusherProvider };

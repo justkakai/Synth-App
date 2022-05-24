@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import InstrumentsContext from '../contexts/InstrumentsContext';
+import { InstrumentsContext } from '../contexts/InstrumentsContext';
 import '../styles/Instruments.css';
 
 function Instruments() {

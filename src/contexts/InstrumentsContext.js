@@ -1,5 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const InstrumentsContext = createContext(null);
+const InstrumentsContext = createContext(0);
 
-export default InstrumentsContext;
+function InstrumentsProvider({ children }) {
+
+    const [instrument, setInstrument] = useState("Synth")
+
+    return (
+        <InstrumentsContext.Provider value={{instrument, setInstrument}}>
+            {children}
+        </InstrumentsContext.Provider>
+    );
+}
+
+export { InstrumentsContext, InstrumentsProvider };

@@ -1,5 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const ChebyshevContext = createContext(null);
+const ChebyshevContext = createContext(0);
 
-export default ChebyshevContext;
+function ChebyshevProvider({ children }) {
+
+    const [chebyshevVal, setChebyshevVal] = useState("0")
+
+    return (
+        <ChebyshevContext.Provider value={{chebyshevVal, setChebyshevVal}}>
+            {children}
+        </ChebyshevContext.Provider>
+    );
+}
+
+export { ChebyshevContext, ChebyshevProvider };
