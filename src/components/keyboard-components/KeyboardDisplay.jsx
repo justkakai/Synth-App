@@ -5,7 +5,7 @@ function KeyboardDisplay({playbackArray}) {
 
     function stopSound() {
         Tone.Destination.mute = true;
-        window.location.reload(); // quickfix
+        window.location.reload(); // quickfix due to latency issues
       }
 
     return (
