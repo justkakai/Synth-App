@@ -1,8 +1,8 @@
 :root {
   /* general colors */
-  --white: #fff;
-  --main-white: #eee;
-  --main-black: black;
+  --white: rgb(255, 255, 255);
+  --main-white: rgb(238, 238, 238);
+  --main-black: rgb(0, 0, 0);
   --main-black-lighter: rgba(0, 0, 0, 0.7);
   --main-black-even-lighter: rgba(0, 0, 0, 0.5);
   --main-purple: rgba(107, 72, 202);
@@ -12,12 +12,12 @@
   --sliders-label-text-color: rgb(163, 163, 163);
   --sliders-label-bg-color: rgb(61, 61, 61);
   --sliders-section-bg-color: rgba(61, 61, 61, 0.4);
-  --slider-bg-color: #383838;
+  --slider-bg-color: rgb(56, 56, 56);
   --slider-bxshd-1: var(--main-black);
   --slider-bxshd-2: rgb(144, 144, 144);
   --slider-thumb-bg-color: rgba(246, 242, 255, 0.8);
   --slider-thumb-bxshd: var(--slider-bxshd-2);
-  --slider-thumb-BEFORE-bg-color: #333;
+  --slider-thumb-BEFORE-bg-color: rgb(51, 51, 51);
   --slider-thumb-BEFORE-bg-color-HOVER: var(--main-purple);
   --slider-tooltip-bxshd-1: var(--background-color);
   --slider-tooltip-bxshd-2: var(--slider-bxshd-2);
@@ -26,8 +26,10 @@
 
   /* instruments section colors */
 
-  --instruments-button-text-color: var(--main-white);
+  --instruments-button-text-color: rgb(221, 221, 221);
   --instruments-button-bg-color: rgba(255, 255, 255, 0.2);
+  --instruments-button-text-color-active: rgb(34, 34, 34);
+  --instruments-button-bg-color-active: rgb(221, 221, 221);
   --instruments-button-bxshd: rgba(0, 0, 0, 0.1);
 
   /* keyboard section colors */
@@ -39,7 +41,7 @@
   --black-key-active-color: rgb(82, 82, 82);
   --keyboard-display-bg-color: var(--main-black);
   --playback-array-display-bg-color: rgb(68, 68, 68);
-  --react-icons-color: grey;
+  --react-icons-color: rgb(128, 128, 128);
   
   /* fonts */
   --Satoshi-Regular: "Satoshi-Regular", sans-serif;

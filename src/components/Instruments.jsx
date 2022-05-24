@@ -16,9 +16,9 @@ function Instruments() {
                         key={index}
                         onClick={() => setInstrument(instrumentType)}
                         style={instrument === instrumentType ?
-                            { color: "rgb(0,0,0)", background: "rgb(221, 221, 221)" }
+                            { color: "var(--instruments-button-text-color-active)", background: "var(--instruments-button-bg-color-active)" }
                             :
-                            { color: "rgb(221, 221, 221)", background: "rgba(255, 255, 255, 0.2)" }}>
+                            { color: "var(--instruments-button-text-color)", background: "var(--instruments-button-bg-color)" }}>
                         {instrumentType}
                     </button>
                 ))}
