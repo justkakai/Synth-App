@@ -11,9 +11,9 @@ function Instruments() {
     return (
         <section className="instruments-section">
             <div className="instruments-container">
-                {instrumentsArray.map((instrumentType, index) => (
+                {instrumentsArray.map((instrumentType) => (
                     <button
-                        key={index}
+                        key={instrumentType}
                         onClick={() => setInstrument(instrumentType)}
                         style={instrument === instrumentType ?
                             { color: "var(--instruments-button-text-color-active)", background: "var(--instruments-button-bg-color-active)" }

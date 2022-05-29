@@ -19,7 +19,7 @@ const usePlay = () => {
 
     Tone.Destination.mute = false;
 
-    // he output of the synth could be routed through one (or more) effects before going to the speakers
+    // the output of the synth could be routed through one (or more) effects before going to the speakers
 
     // ( [decay] ) --> the amount of time it will reverberate for
     const reverb = new Tone.Reverb(parseFloat(reverbVal)).toDestination();

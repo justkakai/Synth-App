@@ -18,9 +18,7 @@ function KeyboardKeys({ playbackArray, setPlaybackArray }) {
   function playLaptopKeys(e) {
     playNote(KEY_TO_NOTE[e.key]);
     setActiveKey(KEY_TO_NOTE[e.key]);
-    setTimeout(() => {
-      setActiveKey("");
-    }, 200)
+    setTimeout(() => { setActiveKey("") }, 200)
   }
 
   useEffect(() => {
@@ -37,12 +35,12 @@ function KeyboardKeys({ playbackArray, setPlaybackArray }) {
           key={noteOctave}
           style={
             activeKey === noteOctave ?
-              keysClasses === "white-key piano-key" ?
+              keysClasses.includes("white-key") ?
                 { backgroundColor: "var(--white-key-active-color)", top: "0.4rem" }
                 :
                 { backgroundColor: "var(--black-key-active-color)", marginTop: "0.4rem" }
               :
-              keysClasses === "white-key piano-key" ?
+              keysClasses.includes("white-key") ?
                 { backgroundColor: "var(--white-key-color)" }
                 :
                 { backgroundColor: "var(--black-key-color)" }}
@@ -50,10 +48,9 @@ function KeyboardKeys({ playbackArray, setPlaybackArray }) {
           onMouseDown={() => {
             playNote(noteOctave);
             setActiveKey(noteOctave);
-            setTimeout(() => {
-              setActiveKey("");
-            }, 200)
-          }}></button>
+            setTimeout(() => { setActiveKey("") }, 200)
+          }}>
+        </button>
       ))}
     </div>
   )

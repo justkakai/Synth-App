@@ -8,11 +8,18 @@ function Reverb() {
     return (
         <div className=" sliders-general bit-crusher-slider">
             <p>Reverb</p>
-            <input onInput={(e) => setReverbVal(e.target.value)} className="slider" type="range" name="slider" min="0" max="10" value={reverbVal} step="1" />
-            <div style={{ left: `${(reverbVal / 10) * 100 + "%"}` }} className="slider-thumb">
+            <input
+                onInput={(e) => setReverbVal(e.target.value)}
+                className="slider" type="range" name="slider" min="0" max="10" value={reverbVal} step="1" />
+            <div
+                style={{ left: `${(reverbVal / 10) * 100 + "%"}` }}
+                className="slider-thumb">
                 <div className="tool-tip">{parseInt(reverbVal)}</div>
             </div>
-            <div style={{ width: `${(reverbVal / 10) * 100 + "%"}` }} className="progress"></div>
+            <div
+                style={{ width: `${(reverbVal / 10) * 100 + "%"}` }}
+                className="progress">
+            </div>
         </div>
     )
 }
