@@ -5,11 +5,11 @@
 
 
 ## Technologies Used
-<a href="https://tonejs.github.io/"><img src="https://user-images.githubusercontent.com/92310262/173690561-914a391b-9604-4713-a9a4-af8b3ad50f4c.png" height="50px" /></a>
+<a href="https://tonejs.github.io/" target="_blank"><img src="https://user-images.githubusercontent.com/92310262/173690561-914a391b-9604-4713-a9a4-af8b3ad50f4c.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://reactjs.org/"><img src="https://user-images.githubusercontent.com/92310262/173690803-09d779b2-e484-4035-88dc-2ba6f28713b5.png" height="50px" /></a>
+<a href="https://reactjs.org/" target="_blank"><img src="https://user-images.githubusercontent.com/92310262/173690803-09d779b2-e484-4035-88dc-2ba6f28713b5.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.npmjs.com/"><img src="https://user-images.githubusercontent.com/92310262/173691508-1284ff8e-8640-4566-9256-e2a4975c569b.png" height="50px" /></a>
+<a href="https://www.npmjs.com/" target="_blank"><img src="https://user-images.githubusercontent.com/92310262/173691508-1284ff8e-8640-4566-9256-e2a4975c569b.png" height="50px" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Description
