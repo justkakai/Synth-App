@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+## VIRTUOSYNTH
+<h4>A Software Synthesizer built with React</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![synthApp](https://user-images.githubusercontent.com/92310262/173689911-0a180882-3ca4-4d01-b6df-19e76d41e06e.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies Used
+<a href="https://tonejs.github.io/"><img src="https://user-images.githubusercontent.com/92310262/173690561-914a391b-9604-4713-a9a4-af8b3ad50f4c.png" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://reactjs.org/"><img src="https://user-images.githubusercontent.com/92310262/173690803-09d779b2-e484-4035-88dc-2ba6f28713b5.png" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.npmjs.com/"><img src="https://user-images.githubusercontent.com/92310262/173691508-1284ff8e-8640-4566-9256-e2a4975c569b.png" height="50px" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+VirtuoSynth is a web application enabling you to make and play music in the browser. It is a software synthesizer utilizing the Web Audio API and its extensive framework, <em>Tone.js</em>. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+At the moment, it is equipped with the following effects:
 
-### `npm test`
+<p><strong><em>Reverb:</em></strong></p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+emulates natural reverberation to make a bigger, atmospheric, ambient sound by adding the illusion of space to an instrument's tone
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-### `npm run build`
+<p><strong><em>Ping Pong Delay:</em></strong></p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+just imagine a left/right ping pong ball bouncing back and forth across the stereo field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p><strong><em>Chebyshev:</em></strong></p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+a waveshaper which is good for making different types of distortion sounds
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-### `npm run eject`
+<p><strong><em>BitCrusher:</em></strong></p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+yet another distortion effect, only this time, sampled drums are made to sound more crunchy and crisp, an effect that’s reminiscent of old-school hardware drum samplers like the legendary E-mu SP-12
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div align="center"><strong>to be continued .....</strong></div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
