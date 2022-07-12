@@ -85,9 +85,6 @@
   .keyboard {
     overflow-x: auto;
   }
-}
-
-@media (max-width: 1346px) {
   .piano-key {
     height: 15rem;
   }
@@ -95,6 +92,15 @@
     height: 9rem;
   }
 }
+
+/* @media (max-width: 1346px) {
+  .piano-key {
+    height: 15rem;
+  }
+  .black-key {
+    height: 9rem;
+  }
+} */
 
 @media (max-width: 748px) {
   .piano-key {
